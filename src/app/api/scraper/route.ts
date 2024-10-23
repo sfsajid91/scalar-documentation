@@ -102,7 +102,6 @@ export const GET = async (request: NextRequest) => {
     const url = searchParams.get('url');
 
     const validatedUrl = schema.safeParse({ url });
-    console.log('validatedUrl', validatedUrl);
 
     if (!validatedUrl.success) {
         return NextResponse.json({ error: 'Invalid URL' }, { status: 400 });
